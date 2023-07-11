@@ -10,22 +10,20 @@ public class MyHttpClient : HttpClient
 
     public async Task<string> Get(string url)
     {
-        try
+        var result = await SendAsync(new HttpRequestMessage
         {
-            var result = await SendAsync(new HttpRequestMessage
-            {
-                Method = HttpMethod.Get,
-                RequestUri = new Uri(url)
-            });
+            Method = HttpMethod.Get,
+            RequestUri = new Uri(url)
+        });
 
-            var str = await result.Content.ReadAsStringAsync();
+        var str = await result.Content.ReadAsStringAsync();
 
-            return str;
-        }
-        catch
-        {
+        return str;
+    }
 
-        }
-        
+    public async Task CreateUser(string username, string password)
+    {
+        //fake create user
+
     }
 }

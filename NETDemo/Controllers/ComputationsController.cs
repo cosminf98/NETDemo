@@ -30,4 +30,11 @@ public class ComputationsController : ControllerBase
         var content = await httpClient.Get("https://jsonplacehosdfglder.typicode.com/commtiuyents?postId=1");
         return Ok(content);
     }
+
+    [HttpPost]
+    public async Task<IActionResult> CreateUser()
+    {
+        await httpClient.CreateUser("Gigel", "parola");
+        return Ok();
+    }
 }
