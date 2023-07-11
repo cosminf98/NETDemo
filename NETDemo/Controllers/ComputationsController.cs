@@ -31,6 +31,10 @@ public class ComputationsController : ControllerBase
         return Ok(content);
     }
 
+    /// <summary>
+    /// Create a user based on a password and username
+    /// </summary>
+    /// <returns></returns>
     [HttpPost]
     public async Task<IActionResult> CreateUser()
     {
